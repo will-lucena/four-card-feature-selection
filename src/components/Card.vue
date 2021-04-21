@@ -8,8 +8,10 @@
       'card--blue': blue,
     }"
   >
-    <h1 class="title">{{ title }}</h1>
-    <p class="description">{{ description }}</p>
+    <div>
+      <h1 class="title">{{ title }}</h1>
+      <p class="description">{{ description }}</p>
+    </div>
     <img :src="image" alt="icon" class="image" width="50px" height="50px" />
   </div>
 </template>
@@ -69,10 +71,12 @@ export default {
 .card {
   background-color: $grey-ligher;
   margin: 1rem;
-  min-height: 200px;
+  min-width: 200px;
+  max-width: 400px;
   border-radius: 8px;
   border-top: 4px solid;
   border-top-color: $grey-ligher;
+  justify-content: space-between;
 }
 
 .card--cyan {
@@ -96,7 +100,6 @@ export default {
   color: $blue-darker;
   font-weight: 600;
   font-size: 1.5rem;
-  flex: 1;
 }
 
 .description {
@@ -104,12 +107,9 @@ export default {
   color: $grey;
   font-weight: 400;
   font-size: 1rem;
-
-  flex: 1;
 }
 
 .image {
-  flex: 10;
   align-self: flex-end;
   object-fit: contain;
 }
